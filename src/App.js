@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import AboutUs from "./pages/AboutUs";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
+import Services from "./pages/Services";
 import Cart from "./pages/Cart";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import Footer from "./components/Footer"; // footer component
@@ -28,6 +29,7 @@ function App() {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/services" element={<Services />} />
 
 
 

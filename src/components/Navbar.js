@@ -13,6 +13,8 @@ function Navbar() {
           <Link to="/products">Products</Link>
           <Link to="/cart">Cart</Link>
           <Link to="/about">About Us</Link>
+          <Link to="/services">Services</Link>
+
         </div>
 
         {/* Contact info */}

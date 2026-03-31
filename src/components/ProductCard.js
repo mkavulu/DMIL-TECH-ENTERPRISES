@@ -2,10 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 
 function ProductCard({ product }) {
-  // Build WhatsApp link with product name and price
-  const whatsappLink = `https://wa.me/254101489416?text=Hello%20Diml%20Tech%20Enterprises,%20I%20would%20like%20to%20order%20${encodeURIComponent(
-    product.name
-  )}%20priced%20at%20Ksh${product.price}`;
+  // Correct WhatsApp link with product name and price
+  const whatsappLink = `https://wa.me/254101489416?text=${encodeURIComponent(
+    `Hello Diml Tech Enterprises, I would like to order ${product.name} priced at Ksh${product.price}`
+  )}`;
 
   return (
     <motion.div

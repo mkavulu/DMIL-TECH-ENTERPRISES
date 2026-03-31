@@ -64,7 +64,7 @@ const Cart = () => {
         <p><strong>Total: Ksh{total.toFixed(2)}</strong></p>
         <button className="checkout-btn">Proceed to Checkout</button>
         <a
-          href="https://wa.me/254710165356?text=Hello%20DMIL%20TECH%20ENTERPRISES,%20I%20would%20like%20to%20order%20my%20cart%20items."
+          href="https://wa.me/254101489416?text=Hello%20DMIL%20TECH%20ENTERPRISES,%20I%20would%20like%20to%20order%20my%20cart%20items."
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp-btn"

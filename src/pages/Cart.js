@@ -26,6 +26,10 @@ const Cart = () => {
   const shipping = subtotal > 0 ? 5 : 0;
   const total = subtotal + shipping;
 
+  // Build WhatsApp link with cart summary
+  const whatsappMessage = `Hello DMIL TECH ENTERPRISES, I would like to order my cart items. Total: Ksh${total.toFixed(2)}`;
+  const whatsappLink = `https://wa.me/254101489416?text=${encodeURIComponent(whatsappMessage)}`;
+
   return (
     <div className="cart-page app-container">
       <section className="cart-hero">
@@ -64,7 +68,7 @@ const Cart = () => {
         <p><strong>Total: Ksh{total.toFixed(2)}</strong></p>
         <button className="checkout-btn">Proceed to Checkout</button>
         <a
-          href="https://wa.me/254101489416?text=Hello%20DMIL%20TECH%20ENTERPRISES,%20I%20would%20like%20to%20order%20my%20cart%20items."
+          href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
           className="whatsapp-btn"
@@ -80,3 +84,4 @@ const Cart = () => {
 };
 
 export default Cart;
+

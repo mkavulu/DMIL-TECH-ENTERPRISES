@@ -21,7 +21,7 @@ function Navbar() {
           <span>📞 +101489416</span>
           <span>📧 dmiltechenterprises@gmail.com</span>
           <a
-            href="https://web.whatsapp.com/send?phone=254101489416"
+            href="https://wa.me/254101489416"
             target="_blank"
             rel="noopener noreferrer"
             className="whatsapp-btn"

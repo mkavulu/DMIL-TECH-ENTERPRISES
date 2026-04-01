@@ -1,6 +1,6 @@
+// Services.js
 import React from "react";
 import "../styles/style.css";
-import Footer from "../components/Footer";
 
 function Services() {
   return (
@@ -12,35 +12,23 @@ function Services() {
 
       <div className="services-container">
         <section>
-          <h2> Computer Services</h2>
-          <p>
-            We provide expert computer repair, maintenance, and setup services
-            to keep your systems running smoothly.
-          </p>
+          <h2>Computer Services</h2>
+          <p>We provide expert computer repair, maintenance, and setup services to keep your systems running smoothly.</p>
         </section>
 
         <section>
-          <h2> Networking Services</h2>
-          <p>
-            From small offices to enterprise setups, we design and install
-            reliable networks, including cabling, routers, and switches.
-          </p>
+          <h2>Networking Services</h2>
+          <p>From small offices to enterprise setups, we design and install reliable networks, including cabling, routers, and switches.</p>
         </section>
 
         <section>
-          <h2> Server Installation & Setup</h2>
-          <p>
-            Our team specializes in server installation, configuration, and
-            optimization to ensure secure and efficient operations.
-          </p>
+          <h2>Server Installation & Setup</h2>
+          <p>Our team specializes in server installation, configuration, and optimization to ensure secure and efficient operations.</p>
         </section>
 
         <section>
-          <h2> CCTV Installation</h2>
-          <p>
-            We install and configure CCTV systems for homes, offices, and
-            businesses, ensuring reliable security monitoring and peace of mind.
-          </p>
+          <h2>CCTV Installation</h2>
+          <p>We install and configure CCTV systems for homes, offices, and businesses, ensuring reliable security monitoring and peace of mind.</p>
         </section>
 
         <a
@@ -52,11 +40,8 @@ function Services() {
           Contact Us on WhatsApp
         </a>
       </div>
-
-      <Footer />
     </div>
   );
 }
 
 export default Services;
-

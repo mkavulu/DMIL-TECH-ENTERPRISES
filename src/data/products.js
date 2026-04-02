@@ -12,6 +12,7 @@ import AllinOneImg from "../assets/All-In-One.jpg";
 import laptopchargerImg from "../assets/laptop-charger.jpg";
 import RouterImg from "../assets/router.png";
 import SwitchImg from "../assets/switches.jpeg";
+import TonnerImg from "../assets/tonner.jpg";
 
 const products = [
   {
@@ -111,6 +112,13 @@ const products = [
     price: 0,
     category: "accessories",
     image: SwitchImg,
+  },
+   {
+    id: 15,
+    name: "Tonner & Catridges",
+    price: 0,
+    category: "accessories",
+    image: TonnerImg,
   },
 ];
 

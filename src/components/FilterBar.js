@@ -15,6 +15,8 @@ function FilterBar({ search, setSearch, category, setCategory }) {
         <option value="headphones">Headphones</option>
         <option value="smartwatch">Smart Watches</option>
         <option value="accessories">Accessories</option>
+        <option value="accessories">laptop</option>
+        <option value="accessories">printers</option>
       </select>
     </div>
   );

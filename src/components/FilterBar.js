@@ -1,6 +1,11 @@
 import React from "react";
+import products from "../data/products";
+
 
 function FilterBar({ search, setSearch, category, setCategory }) {
+  // Dynamically extract unique categories from products
+  const categories = ["all", ...new Set(products.map((p) => p.category))];
+
   return (
     <div className="filter-bar">
       <input
@@ -11,12 +16,11 @@ function FilterBar({ search, setSearch, category, setCategory }) {
       />
 
       <select value={category} onChange={(e) => setCategory(e.target.value)}>
-        <option value="all">All Categories</option>
-        <option value="headphones">Headphones</option>
-        <option value="smartwatch">Smart Watches</option>
-        <option value="accessories">Accessories</option>
-        <option value="accessories">laptop</option>
-        <option value="accessories">printers</option>
+        {categories.map((cat) => (
+          <option key={cat} value={cat}>
+            {cat === "all" ? "All Categories" : cat.charAt(0).toUpperCase() + cat.slice(1)}
+          </option>
+        ))}
       </select>
     </div>
   );

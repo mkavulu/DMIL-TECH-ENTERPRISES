@@ -18,13 +18,13 @@ function HeroSection() {
           Welcome to Diml Tech Enterprises
         </motion.h2>
 
-        <motion.h3
+        <motion.h4
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
           Modern gadgets. Affordable prices. Trusted quality.
-        </motion.h3>
+        </motion.h4>
 
         <motion.button
           initial={{ opacity: 0 }}

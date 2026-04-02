@@ -92,7 +92,7 @@ function PrivacyPolicy() {
             us:
           </p>
           <p>📧 dmiltechenterprises@gmail.com</p>
-          <p>📞 +254710165356 / +101489416</p>
+          <p>📞 +254710165356 / +254101489416</p>
         </section>
       </div>
     </div>

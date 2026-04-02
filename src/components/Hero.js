@@ -10,21 +10,21 @@ function HeroSection() {
 
       {/* Overlay with animated text */}
       <div className="hero-overlay">
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
           Welcome to Diml Tech Enterprises
-        </motion.h1>
+        </motion.h2>
 
-        <motion.h2
+        <motion.h3
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
         >
           Modern gadgets. Affordable prices. Trusted quality.
-        </motion.h2>
+        </motion.h3>
 
         <motion.button
           initial={{ opacity: 0 }}

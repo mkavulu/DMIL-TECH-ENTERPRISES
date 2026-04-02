@@ -13,6 +13,9 @@ import laptopchargerImg from "../assets/laptop-charger.jpg";
 import RouterImg from "../assets/router.png";
 import SwitchImg from "../assets/switches.jpeg";
 import TonnerImg from "../assets/tonner.jpg";
+import PrinterImg from "../assets/printers.jpg";
+import MonitorImg from "../assets/monitors.jpg";
+import KeyboardImg from "../assets/keyboard.jpg";
 
 const products = [
   {
@@ -117,8 +120,29 @@ const products = [
     id: 15,
     name: "Tonner & Catridges",
     price: 0,
-    category: "accessories",
+    category: "Printer",
     image: TonnerImg,
+  },
+   {
+    id: 16,
+    name: "Printers",
+    price: 0,
+    category: "accessories",
+    image: PrinterImg,
+  },
+   {
+    id: 16,
+    name: "Monitors",
+    price: 0,
+    category: "Monitor",
+    image: MonitorImg,
+  },
+  {
+    id: 16,
+    name: "Wireless Keybord & Mouse",
+    price: 0,
+    category: "accessories",
+    image: KeyboardImg,
   },
 ];
 

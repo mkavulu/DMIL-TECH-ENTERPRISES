@@ -30,6 +30,12 @@ function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.7 }}
+          onClick={() => {
+            document
+              .getElementById("products-section")
+              ?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className="hero-button"
         >
           Shop Now
         </motion.button>

@@ -6,10 +6,13 @@ function Home({ addToCart }) {
   return (
     <div>
       <HeroSection />   {/* hero only on homepage */}
-      <Products addToCart={addToCart} />  {/* products grid below */}
+
+      <div id="products-section">
+        <Products addToCart={addToCart} />  {/* products grid below */}
+      </div>
+      
     </div>
   );
 }
 
 export default Home;
-

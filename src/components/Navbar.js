@@ -1,23 +1,33 @@
-import React from "react";
+// src/components/Navbar.js
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <div className="container navbar-inner">
+        {/* Logo */}
         <div className="logo">Diml Tech Enterprises</div>
 
-        {/* nav-links pushed to far right */}
-        <div className="nav-links">
-          <Link to="/">Home</Link>
-          <Link to="/products">Products</Link>
-          <Link to="/cart">Cart</Link>
-          <Link to="/about">About Us</Link>
-          <Link to="/services">Services</Link>
-
+        {/* Hamburger icon for mobile */}
+        <div className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
+          ☰
         </div>
 
-        {/* Contact info */}
+        {/* Navigation links */}
+        <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+          <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+          <li><Link to="/products" onClick={() => setIsOpen(false)}>Products</Link></li>
+          <li><Link to="/cart" onClick={() => setIsOpen(false)}>Cart</Link></li>
+          <li><Link to="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
+          <li><Link to="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
+          <li><Link to="/privacy" onClick={() => setIsOpen(false)}>Privacy Policy</Link></li>
+        </ul>
+
+        {/* Contact info (always visible on desktop, can be styled to hide on mobile if needed) */}
         <div className="nav-contact">
           <span>📞 +254710165356</span>
           <span>📞 +101489416</span>
@@ -32,7 +42,7 @@ function Navbar() {
           </a>
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
 

@@ -210,6 +210,48 @@
     display: none; /* hide contact info on mobile */
   }
 }
+/* Mobile styles */
+.nav-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 992px) {
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    padding: 10px;
+    border-radius: 6px;
+    flex-direction: column;
+    background: #25D366;
+
+    /* Start hidden off-screen */
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+
+    /* Smooth transition */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .nav-links.open {
+    transform: translateX(0); /* slide in */
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-contact {
+    display: none; /* hide contact info on mobile */
+  }
+}
 
 
 /* GLOBAL BACKGROUND */

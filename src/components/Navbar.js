@@ -1,7 +1,8 @@
 // src/components/Navbar.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import { FaBars, FaTimes } from "react-icons/fa";   // hamburger + close icons
+
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +13,9 @@ function Navbar() {
         {/* Logo */}
         <div className="logo">Diml Tech Enterprises</div>
 
-        {/* Hamburger icon for mobile */}
+        {/* Hamburger / Close icon */}
         <div className="nav-toggle" onClick={() => setIsOpen(!isOpen)}>
-          ☰
+          {isOpen ? <FaTimes /> : <FaBars />}
         </div>
 
         {/* Navigation links */}
@@ -27,7 +28,7 @@ function Navbar() {
           <li><Link to="/privacy" onClick={() => setIsOpen(false)}>Privacy Policy</Link></li>
         </ul>
 
-        {/* Contact info (always visible on desktop, can be styled to hide on mobile if needed) */}
+        {/* Contact info (desktop only) */}
         <div className="nav-contact">
           <span>📞 +254710165356</span>
           <span>📞 +101489416</span>
@@ -47,5 +48,7 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
 
 

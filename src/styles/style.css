@@ -239,9 +239,10 @@
   }
 
   .nav-links.open {
-    transform: translateX(0); /* slide in */
-    opacity: 1;
-    pointer-events: auto;
+    transform: translateX(0);   /* slide in */
+    opacity: 1;                 /* make visible */
+    pointer-events: auto;       /* allow clicks */
+    display: flex;              /* ensure flex layout */
   }
 
   .nav-toggle {
@@ -252,6 +253,7 @@
     display: none; /* hide contact info on mobile */
   }
 }
+
 
 
 /* GLOBAL BACKGROUND */

@@ -1,15 +1,14 @@
+// src/App.js
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
+import Layout from "./components/Layout";   // global wrapper
 import AboutUs from "./pages/AboutUs";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Services from "./pages/Services";
 import Cart from "./pages/Cart";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import Footer from "./components/Footer"; // footer component
 import "./styles/style.css";
-
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -20,9 +19,7 @@ function App() {
 
   return (
     <Router>
-      <div className="app-container">
-        <Navbar />
-
+      <Layout>
         <Routes>
           <Route path="/" element={<Home addToCart={addToCart} />} />
           <Route path="/products" element={<Products addToCart={addToCart} />} />
@@ -30,16 +27,10 @@ function App() {
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/services" element={<Services />} />
-
-
-
         </Routes>
-
-        <Footer /> {/* footer always at bottom */}
-      </div>
+      </Layout>
     </Router>
   );
 }
 
 export default App;
-

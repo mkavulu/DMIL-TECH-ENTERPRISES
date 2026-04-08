@@ -190,7 +190,7 @@
 }
 
 /* MOBILE STYLES */
-@media (max-width: 500px) {
+@media (max-width: 768px) {
   .nav-links {
     position: absolute;
     top: 60px;
@@ -200,6 +200,7 @@
     border-radius: 6px;
     flex-direction: column;
     background: #25D366;
+    z-index: 2000;
 
     /* Start hidden off-screen */
     transform: translateX(100%);
@@ -210,20 +211,19 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
 
-  /* When menu is open */
   .nav-links.open {
-    display: flex;              /* ensure links are visible */
-    transform: translateX(0);   /* slide in */
-    opacity: 1;                 /* fade in */
-    pointer-events: auto;       /* allow clicks */
+    display: flex;
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .nav-toggle {
-    display: block;             /* show hamburger on mobile */
+    display: block;
   }
 
   .nav-contact {
-    display: none;              /* hide contact info on mobile */
+    display: none;
   }
 }
 

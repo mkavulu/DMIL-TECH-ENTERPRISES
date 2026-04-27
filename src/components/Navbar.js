@@ -1,11 +1,11 @@
 // src/components/Navbar.js
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FaBars, FaTimes } from "react-icons/fa";   // hamburger + close icons
-
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [contactsOpen, setContactsOpen] = useState(false);
 
   return (
     <nav className="navbar">
@@ -26,29 +26,37 @@ function Navbar() {
           <li><Link to="/about" onClick={() => setIsOpen(false)}>About Us</Link></li>
           <li><Link to="/services" onClick={() => setIsOpen(false)}>Services</Link></li>
           <li><Link to="/privacy" onClick={() => setIsOpen(false)}>Privacy Policy</Link></li>
-        </ul>
 
-        {/* Contact info (desktop only) */}
-        <div className="nav-contact">
-          <span>📞 +254710165356</span>
-          <span>📞 +101489416</span>
-          <span>📧 dmiltechenterprises@gmail.com</span>
-          <a
-            href="https://wa.me/254101489416"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="whatsapp-btn"
-          >
-            Connect on WhatsApp
-          </a>
-        </div>
+          {/* Contacts dropdown */}
+          <li className="dropdown">
+            <button
+              className="dropdown-toggle"
+              onClick={() => setContactsOpen(!contactsOpen)}
+            >
+              Contacts
+            </button>
+            <ul className={`dropdown-menu ${contactsOpen ? "show" : ""}`}>
+              <li>📞 +254710165356</li>
+              <li>📞 +101489416</li>
+              <li>📧 dmiltechenterprises@gmail.com</li>
+            </ul>
+          </li>
+
+          {/* WhatsApp link inline */}
+          <li>
+            <a
+              href="https://wa.me/254101489416"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="whatsapp-btn"
+            >
+              Connect on WhatsApp
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
   );
 }
 
 export default Navbar;
-
-
-
-

@@ -1,34 +1,50 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import "../styles/style.css";
 import Footer from "../components/Footer";
+import { CartContext } from "../context/CartContext";
+
+const CartItem = ({ item, updateQuantity, removeItem }) => (
+  <div className="cart-item">
+    <img src={item.image} alt={item.name} className="cart-image" />
+    <div className="cart-details">
+      <h3>{item.name}</h3>
+      <p className="price">Ksh{item.price?.toFixed(2) || "N/A"}</p>
+      <div className="quantity-control">
+        <button onClick={() => updateQuantity(item.id, -1)}>-</button>
+        <input type="number" value={item.quantity} readOnly />
+        <button onClick={() => updateQuantity(item.id, 1)}>+</button>
+      </div>
+      <button
+        className="remove-item"
+        onClick={() => {
+          if (window.confirm("Remove this item from cart?")) {
+            removeItem(item.id);
+          }
+        }}
+      >
+        Remove
+      </button>
+    </div>
+  </div>
+);
 
 const Cart = () => {
-  const [cartItems, setCartItems] = useState([
-    { id: 1, name: "Sample Product A", price: 25, quantity: 1, image: "/images/sample-a.jpg" },
-    { id: 2, name: "Sample Product B", price: 30, quantity: 2, image: "/images/sample-b.jpg" }
-  ]);
+  // ✅ Use CartContext instead of local state
+  const { cartItems, updateQuantity, removeItem } = useContext(CartContext);
 
-  const updateQuantity = (id, delta) => {
-    setCartItems(items =>
-      items.map(item =>
-        item.id === id
-          ? { ...item, quantity: Math.max(1, item.quantity + delta) }
-          : item
-      )
-    );
-  };
-
-  const removeItem = (id) => {
-    setCartItems(items => items.filter(item => item.id !== id));
-  };
-
-  const subtotal = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  const subtotal = cartItems.reduce(
+    (sum, item) => sum + (item.price || 0) * item.quantity,
+    0
+  );
   const shipping = subtotal > 0 ? 5 : 0;
   const total = subtotal + shipping;
 
-  // Build WhatsApp link with cart summary
-  const whatsappMessage = `Hello DMIL TECH ENTERPRISES, I would like to order my cart items. Total: Ksh${total.toFixed(2)}`;
-  const whatsappLink = `https://wa.me/254101489416?text=${encodeURIComponent(whatsappMessage)}`;
+  const whatsappMessage = `Hello DMIL TECH ENTERPRISES, I would like to order my cart items:\n${cartItems
+    .map(i => `${i.name} x${i.quantity}`)
+    .join(", ")}\nTotal: Ksh${total.toFixed(2)}`;
+  const whatsappLink = `https://wa.me/254101489416?text=${encodeURIComponent(
+    whatsappMessage
+  )}`;
 
   return (
     <div className="cart-page app-container">
@@ -42,21 +58,12 @@ const Cart = () => {
           <p>Your cart is empty.</p>
         ) : (
           cartItems.map(item => (
-            <div className="cart-item" key={item.id}>
-              <img src={item.image} alt={item.name} />
-              <div className="cart-details">
-                <h3>{item.name}</h3>
-                <p className="price">Ksh{item.price.toFixed(2)}</p>
-                <div className="quantity-control">
-                  <button onClick={() => updateQuantity(item.id, -1)}>-</button>
-                  <input type="number" value={item.quantity} readOnly />
-                  <button onClick={() => updateQuantity(item.id, 1)}>+</button>
-                </div>
-                <button className="remove-item" onClick={() => removeItem(item.id)}>
-                  Remove
-                </button>
-              </div>
-            </div>
+            <CartItem
+              key={item.id}
+              item={item}
+              updateQuantity={updateQuantity}
+              removeItem={removeItem}
+            />
           ))
         )}
       </div>
@@ -77,7 +84,6 @@ const Cart = () => {
         </a>
       </aside>
 
-      {/* Only one footer */}
       <Footer />
     </div>
   );

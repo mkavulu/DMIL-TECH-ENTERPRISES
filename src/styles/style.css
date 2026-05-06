@@ -79,9 +79,12 @@
   background: #0056d2;
 }
 
+<<<<<<< HEAD
 
 
 
+=======
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 /* NAVBAR BASE */
 .navbar {
   background: #25D366;
@@ -122,7 +125,25 @@
   transform: translateY(-2px);
 }
 
+<<<<<<< HEAD
 /* WhatsApp button (desktop inline) */
+=======
+/* Contact info (desktop only) */
+.nav-contact {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: 1.25rem;
+  font-size: 0.9rem;
+  color: #fff; /* adjusted for contrast */
+}
+
+.nav-contact span {
+  color: #fff;
+}
+
+/* WhatsApp button */
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 .whatsapp-btn {
   background: #128C7E;
   color: white;
@@ -192,6 +213,7 @@
   .nav-contact {
     display: none;
   }
+<<<<<<< HEAD
 
   /* WhatsApp button floats on mobile */
   .whatsapp-btn {
@@ -205,6 +227,53 @@
   }
 }
 
+=======
+  .nav-links li {
+  display: flex;
+  align-items: center;
+}
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin-left: auto;
+  align-items: center; /* ensures vertical alignment */
+}
+
+.whatsapp-btn {
+  margin-left: 1rem; /* spacing from links */
+  align-self: center;
+}
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #128C7E;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 4000;
+  }
+}
+
+.whatsapp-btn {
+  background: #128C7E;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
+
+}
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 /* Dropdown */
 .dropdown {
   position: relative;
@@ -814,12 +883,20 @@ html, body {
   flex-direction: column;
 }
 
+<<<<<<< HEAD
 /* Hero banner */
+=======
+/* Hero banner for cart page */
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 .cart-hero {
   background: #007bff;
   color: white;
   text-align: center;
+<<<<<<< HEAD
   padding: 50px 20px;
+=======
+  padding: 50px 20px; /* unified padding */
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 }
 
 .cart-hero h1 {
@@ -832,7 +909,11 @@ html, body {
   font-weight: 300;
 }
 
+<<<<<<< HEAD
 /* Cart container */
+=======
+/* Cart container and items */
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 .cart-container {
   max-width: 900px;
   margin: 30px auto;
@@ -864,6 +945,7 @@ html, body {
   flex: 1;
 }
 
+<<<<<<< HEAD
 .cart-details h3 {
   margin: 0;
   font-size: 1.1rem;
@@ -874,6 +956,8 @@ html, body {
   margin: 0.3rem 0;
 }
 
+=======
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 /* Quantity controls */
 .quantity-control {
   display: flex;
@@ -914,11 +998,15 @@ html, body {
   transition: background 0.2s;
 }
 
+<<<<<<< HEAD
 .remove-item:hover {
   background: #e63b3b;
 }
 
 /* Cart summary */
+=======
+/* Cart summary box */
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 .cart-summary {
   max-width: 400px;
   margin: 40px auto;
@@ -929,11 +1017,15 @@ html, body {
   text-align: center;
 }
 
+<<<<<<< HEAD
 .cart-summary h2 {
   margin-bottom: 1rem;
 }
 
 /* Checkout button */
+=======
+/* Checkout and WhatsApp buttons */
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 .checkout-btn {
   display: block;
   width: 100%;
@@ -972,6 +1064,7 @@ html, body {
    RESPONSIVE DESIGN
    =========================== */
 
+<<<<<<< HEAD
 /* For tablets and smaller screens */
 @media (max-width: 768px) {
   .cart-item {
@@ -1042,6 +1135,8 @@ html, body {
 }
 
 
+=======
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 /* ===========================
    HERO BASE (shared hero styles)
    =========================== */

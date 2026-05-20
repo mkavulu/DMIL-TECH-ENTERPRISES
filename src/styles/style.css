@@ -1177,9 +1177,9 @@ body {
 
 .scroll-to-top {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366; /* WhatsApp green */
+  bottom: 5vh;   /* use viewport units so it sits above phone nav bar */
+  right: 5vw;    /* keep it away from screen edge */
+  background-color: #25d366;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -1187,41 +1187,36 @@ body {
   cursor: pointer;
   font-size: 1.25rem;
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  transition: background 0.2s ease;
-  z-index: 5000;
-  animation: bounceIn 1.2s ease; /* trigger bounce when visible */
+  transition: background 0.2s ease, transform 0.2s ease;
+  z-index: 9999; /* force it above navbars/footers */
 }
 
+/* Hover effect (desktop only) */
 .scroll-to-top:hover {
   background-color: #128C7E;
+  transform: translateY(-2px);
 }
 
-/* Bounce animation keyframes */
-@keyframes bounceIn {
-  0%   { transform: translateY(100px); opacity: 0; }
-  60%  { transform: translateY(-15px); opacity: 1; }
-  80%  { transform: translateY(5px); }
-  100% { transform: translateY(0); }
-}
-
-/* Mobile adjustments */
+/* Tablet adjustments */
 @media (max-width: 768px) {
   .scroll-to-top {
-    bottom: 15px;
-    right: 15px;
+    bottom: 4vh;
+    right: 4vw;
     padding: 10px;
     font-size: 1rem;
   }
 }
 
+/* Phone adjustments */
 @media (max-width: 480px) {
   .scroll-to-top {
-    bottom: 12px;
-    right: 12px;
+    bottom: 3vh;
+    right: 3vw;
     padding: 9px;
     font-size: 0.9rem;
   }
 }
+
 /* End of file */
 
 

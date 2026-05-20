@@ -1177,3 +1177,52 @@ body {
 
 /* End of file */
 
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366; /* WhatsApp green */
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 12px;
+  cursor: pointer;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  transition: background 0.2s ease;
+  z-index: 5000;
+  animation: bounceIn 1.2s ease; /* trigger bounce when visible */
+}
+
+.scroll-to-top:hover {
+  background-color: #128C7E;
+}
+
+/* Bounce animation keyframes */
+@keyframes bounceIn {
+  0%   { transform: translateY(100px); opacity: 0; }
+  60%  { transform: translateY(-15px); opacity: 1; }
+  80%  { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 15px;
+    right: 15px;
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scroll-to-top {
+    bottom: 12px;
+    right: 12px;
+    padding: 9px;
+    font-size: 0.9rem;
+  }
+}
+
+

@@ -1175,8 +1175,6 @@ body {
   .whatsapp-btn { padding: clamp(0.6rem, 3vw, 0.75rem); font-size: clamp(0.9rem, 3.5vw, 1rem); margin-top: clamp(0.5rem, 3vw, 0.75rem); border-radius: clamp(4px, 1vw, 6px); }
 }
 
-/* End of file */
-
 .scroll-to-top {
   position: fixed;
   bottom: 20px;
@@ -1224,5 +1222,8 @@ body {
     font-size: 0.9rem;
   }
 }
+/* End of file */
+
+
 
 

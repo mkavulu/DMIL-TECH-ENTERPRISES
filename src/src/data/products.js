@@ -1,13 +1,10 @@
 import headphonesImg from "../assets/headphones.jpg";
-import sony1Img from "../assets/sony 1.jpg";
-import sony2Img from "../assets/sony2.jpeg";
 import smartwatchImg from "../assets/smartwatch.jpg";
 import gamingHeadsetImg from "../assets/gaming-headset.jpg";
 import backpackImg from "../assets/backpack.jpg";
 import hpLaptopImg from "../assets/hp-laptop.jpg";
 import dellLaptopImg from "../assets/dell-laptop.jpg";
 import hpDesktopImg from "../assets/hp-desktop.jpg";
-import desktopsImg from "../assets/desktops.jpeg";
 import dellDesktopImg from "../assets/dell-desktop.jpg";
 import lenovoLaptopImg from "../assets/lenovo-laptop.jpg";
 import earbudsImg from "../assets/earbuds.jpg";
@@ -23,8 +20,6 @@ import printersImg from "../assets/printer.jpg";
 import smartwatch2Img from "../assets/smartwatch2.jpeg";
 import smartwatch3Img from "../assets/smartwatch3.jpeg";
 import smartwatch4Img from "../assets/smartwatch4.jpeg";
-import smartwatch5Img from "../assets/smartwatch5.jpeg";
-import smartwatch6Img from "../assets/smartwatch6.jpeg";
 import GaminglaptopImg from "../assets/gaminglaptop.jpg";
 import lenovoDesktopImg from "../assets/lenovodesktop.jpg";
 import gamingDesktopImg from "../assets/gamingdesktop.jpg";
@@ -37,15 +32,6 @@ import dellmonitorImg from "../assets/dell-monitor.jpg";
 import lenovomonitorImg from "../assets/lenovo-monitor.jpg";
 import sonyheadphonesImg from "../assets/sony.jpg";
 import logitechheadphonesImg from "../assets/logitech.jpeg";
-import extenderImg from "../assets/tplink-externder.jpg";
-import decoImg from "../assets/Deco m4-m5.jpg";
-import flashImg from "../assets/flash-disk.jpg";
-import memoryImg from "../assets/memory-card.jpg";
-import macbookImg from "../assets/macbook.jpg";
-import surfaceImg from "../assets/surface.jpeg";
-import earbud4Img from "../assets/earbuds5.jpeg";
-import earbud5Img from "../assets/earbuds6.jpeg";
-
 
 
 const products = [
@@ -83,19 +69,6 @@ const products = [
   { id: 31, name: "Lenovo Monitor", category: "monitors", image: lenovomonitorImg },
   { id: 32, name: "Sony Headphones", category: "headphones", image: sonyheadphonesImg },
   { id: 32, name: "Logitech Headphones", category: "headphones", image: logitechheadphonesImg },
-  { id: 33, name: "Extenders", category: "accessories", image: extenderImg },
-  { id: 34, name: "Deco's", category: "accessories", image: decoImg },
-  { id: 35, name: "Flash Disk", category: "accessories", image: flashImg },
-  { id: 36, name: "Memory Card", category: "accessories", image: memoryImg },
-  { id: 37, name: "Surface Pro", category: "laptops", image: surfaceImg },
-  { id: 38, name: "Macbook", category: "laptops", image: macbookImg },
-  { id: 39, name: "Smart Watch", category: "smartwatch", image: smartwatch5Img },
-  { id: 39, name: "Smart Watch", category: "smartwatch", image: smartwatch6Img },
-  { id: 40, name: "Desktop", category: "desktops", image: desktopsImg },
-  { id: 41, name: "Soundcore AeroFit 2 AI Translation Earbuds", category: "earbuds", image: earbud4Img },
-  { id: 41, name: "Wireless Earbud Sport, Bluetooth 5.3", category: "earbuds", image: earbud5Img },
-  { id: 42, name: "Wireless Sony WH-1000XM5 Wireless Headphones", category: "headphones", image: sony1Img },
-  { id: 43, name: "Sony WI-1000XM2 Noise-Canceling Wireless", category: "headphones", image: sony2Img },
 ];
 
 export default products;

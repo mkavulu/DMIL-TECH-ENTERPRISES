@@ -78,23 +78,30 @@
 .card button:hover {
   background: #0056d2;
 }
+
+<<<<<<< HEAD
+
+
+
+=======
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 /* NAVBAR BASE */
 .navbar {
-  background: #25D366; /* WhatsApp green */
-  color: #fff;
+  background: #25D366;
+  color: white;
   padding: 12px 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
-  z-index: 3000; /* sits above hero */
+  position: relative; /* create stacking context */
+  z-index: 2500; /* keep navbar above hero */
 }
 
 .logo {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #fff;
+  color: white;
 }
 
 /* Navigation links (desktop) */
@@ -103,16 +110,11 @@
   gap: 1.25rem;
   list-style: none;
   margin-left: auto;
-  align-items: center;
-}
-
-.nav-links li {
-  display: flex;
-  align-items: center;
+  align-items: center; /* ensures vertical alignment */
 }
 
 .nav-links li a {
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-weight: 500;
   transition: color 0.3s ease, transform 0.2s ease;
@@ -123,6 +125,9 @@
   transform: translateY(-2px);
 }
 
+<<<<<<< HEAD
+/* WhatsApp button (desktop inline) */
+=======
 /* Contact info (desktop only) */
 .nav-contact {
   display: flex;
@@ -130,19 +135,24 @@
   align-items: center;
   margin-left: 1.25rem;
   font-size: 0.9rem;
+  color: #fff; /* adjusted for contrast */
+}
+
+.nav-contact span {
   color: #fff;
 }
 
-/* WhatsApp button (desktop inline) */
+/* WhatsApp button */
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 .whatsapp-btn {
   background: #128C7E;
-  color: #fff;
+  color: white;
   padding: 6px 12px;
   border-radius: 5px;
   font-weight: bold;
   text-decoration: none;
   transition: background 0.3s ease;
-  margin-left: 1rem;
+  display: inline-block;
 }
 
 .whatsapp-btn:hover {
@@ -154,15 +164,20 @@
   display: none;
   font-size: 24px;
   cursor: pointer;
-  color: #fff;
+  color: white;
 }
 
 /* MOBILE STYLES */
 @media (max-width: 768px) {
-  .navbar {
+  .navbar-inner {
     flex-direction: column;
+    height: auto;
     padding: 15px 0;
     gap: 10px;
+  }
+
+  .hero h1 {
+    font-size: 1.75rem;
   }
 
   .nav-links {
@@ -174,7 +189,7 @@
     border-radius: 6px;
     flex-direction: column;
     background: #25D366;
-    z-index: 3500;
+    z-index: 2000;
 
     /* Start hidden off-screen */
     transform: translateX(100%);
@@ -198,6 +213,7 @@
   .nav-contact {
     display: none;
   }
+<<<<<<< HEAD
 
   /* WhatsApp button floats on mobile */
   .whatsapp-btn {
@@ -211,7 +227,54 @@
   }
 }
 
-/* DROPDOWN */
+=======
+  .nav-links li {
+  display: flex;
+  align-items: center;
+}
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin-left: auto;
+  align-items: center; /* ensures vertical alignment */
+}
+
+.whatsapp-btn {
+  margin-left: 1rem; /* spacing from links */
+  align-self: center;
+}
+@media (max-width: 768px) {
+  .whatsapp-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #128C7E;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 50px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 4000;
+  }
+}
+
+.whatsapp-btn {
+  background: #128C7E;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
+
+}
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
+/* Dropdown */
 .dropdown {
   position: relative;
 }
@@ -219,7 +282,7 @@
 .dropdown-toggle {
   background: none;
   border: none;
-  color: #fff;
+  color: white;
   font-size: 1rem;
   cursor: pointer;
 }
@@ -235,19 +298,19 @@
   min-width: 200px;
   border-radius: 4px;
   animation: fadeIn 0.3s ease;
-  z-index: 3500;
+  z-index: 3000; /* ensure it’s above hero */
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+
 .dropdown-menu li {
   padding: 5px 0;
-  color: #fff;
+  color: white;
 }
 
 .dropdown-menu.show {
   display: flex;
 }
-
 /* Overlay background */
 .dropdown-overlay {
   position: fixed;
@@ -255,11 +318,11 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.4); /* semi-transparent black */
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
-  z-index: 3200; /* below dropdown but above hero */
+  z-index: 2500; /* below dropdown but above hero */
 }
 
 .dropdown-overlay.show {
@@ -267,11 +330,23 @@
   pointer-events: auto;
 }
 
+
 /* Fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(-5px); }
   to { opacity: 1; transform: translateY(0); }
 }
+.whatsapp-btn {
+  color: #25D366; /* WhatsApp green */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+  text-decoration: underline;
+}
+
+
 
 
 /* GLOBAL BACKGROUND */
@@ -293,7 +368,7 @@ html, body {
 .hero-section {
   position: relative;
   height: 40vh; /* base height relative to viewport */
-  min-height: 220px;
+  min-height: 220px; /* ensures it's not too small */
   overflow: hidden;
 }
 
@@ -308,41 +383,68 @@ html, body {
 }
 
 .hero-overlay {
-  position: absolute; /* ensures overlay sits above background */
-  top: 0;
-  left: 0;
+  position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
-  width: 100%;
-  color: #fff;
+  color: white;
   text-align: center;
   background: rgba(0,0,0,0.4);
 }
 
-/* HERO RESPONSIVE BREAKPOINTS */
+/* Responsive breakpoints */
 @media (max-width: 768px) {
-  .hero-section { height: 250px; }
-  .hero-overlay h1 { font-size: 2rem; }
-  .hero-overlay h2 { font-size: 1.2rem; }
+  .hero-section {
+    height: 250px; /* smaller hero on tablets */
+  }
+
+  .hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .hero-overlay h2 {
+    font-size: 1.2rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .hero-section { height: 200px; }
-  .hero-overlay h1 { font-size: 1.6rem; }
-  .hero-overlay h2 { font-size: 1rem; }
+  .hero-section {
+    height: 200px; /* compact hero on mobile */
+  }
+
+  .hero-overlay h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero-overlay h2 {
+    font-size: 1rem;
+  }
 }
 
 @media (min-width: 1024px) {
-  .hero-section { height: 450px; }
-  .hero-overlay h1 { font-size: 3rem; }
-  .hero-overlay h2 { font-size: 1.6rem; }
+  .hero-section {
+    height: 450px; /* larger hero on desktops */
+  }
+
+  .hero-overlay h1 {
+    font-size: 3rem;
+  }
+
+  .hero-overlay h2 {
+    font-size: 1.6rem;
+  }
 }
 
-/* ABOUT US PAGE STYLES */
+
+
+/* ==========================
+   ABOUT US PAGE STYLES
+   ========================== */
+
+/* Color Variables */
 :root {
   --primary-color: #007bff;
   --accent-color: #25d366;
@@ -358,11 +460,11 @@ html, body {
   color: var(--text-color);
 }
 
-/* Hero Banner */
+/* Hero Banner - Base */
 .about-hero {
   position: relative;
   width: 100%;
-  height: 350px;
+  height: 350px; /* default large size */
   overflow: hidden;
 }
 
@@ -379,9 +481,9 @@ html, body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  color: #fff;
-  opacity: 0;
-  animation: fadeInOverlay 1.5s ease forwards;
+  color: white;
+  opacity: 0; /* start invisible */
+  animation: fadeInOverlay 1.5s ease forwards; /* trigger fade-in */
 }
 
 .about-hero-overlay h1 {
@@ -397,18 +499,56 @@ html, body {
 
 /* Fade-in animation */
 @keyframes fadeInOverlay {
-  from { opacity: 0; transform: translate(-50%, -60%); }
-  to { opacity: 1; transform: translate(-50%, -50%); }
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%); /* slight upward offset */
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
+
+/* Medium screens */
+@media (max-width: 992px) {
+  .about-hero {
+    height: 250px;
+  }
+
+  .about-hero-overlay h1 {
+    font-size: 2.5rem;
+  }
+
+  .about-hero-overlay p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Small screens */
+@media (max-width: 576px) {
+  .about-hero {
+    height: 200px;
+  }
+
+  .about-hero-overlay h1 {
+    font-size: 2rem;
+  }
+
+  .about-hero-overlay p {
+    font-size: 1rem;
+  }
+}
+
 
 /* Logo positioning */
 .logo {
   position: absolute;
   top: 20px;
-  left: 20px;
-  width: 120px;
+  left: 20px; /* moves logo to left-hand side */
+  width: 120px; /* adjust size as needed */
   height: auto;
 }
+
 
 /* Content Container */
 .about-container {
@@ -418,7 +558,9 @@ html, body {
   text-align: left;
 }
 
-.about-container section { margin-bottom: 40px; }
+.about-container section {
+  margin-bottom: 40px;
+}
 
 .about-container h2 {
   font-size: 2rem;
@@ -460,7 +602,7 @@ html, body {
   margin-top: 20px;
   padding: 14px 24px;
   background: var(--accent-color);
-  color: #fff;
+  color: white;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
@@ -474,33 +616,54 @@ html, body {
   transform: translateY(-2px);
 }
 
-/* ABOUT US RESPONSIVE DESIGN */
-@media (max-width: 992px) {
-  .about-hero { height: 250px; }
-  .about-hero-overlay h1 { font-size: 2.5rem; }
-  .about-hero-overlay p { font-size: 1.2rem; }
-}
-
+/* ==========================
+   RESPONSIVE DESIGN
+   ========================== */
 @media (max-width: 768px) {
-  .about-hero { height: 250px; }
-  .about-hero-overlay h1 { font-size: 2.2rem; }
-  .about-hero-overlay p { font-size: 1rem; }
-  .about-container { margin: 30px auto; padding: 0 15px; }
+  .about-hero {
+    height: 250px;
+  }
+
+  .about-hero-overlay h1 {
+    font-size: 2.2rem;
+  }
+
+  .about-hero-overlay p {
+    font-size: 1rem;
+  }
+
+  .about-container {
+    margin: 30px auto;
+    padding: 0 15px;
+  }
 }
 
 @media (max-width: 480px) {
-  .about-hero { height: 200px; }
-  .about-hero-overlay h1 { font-size: 1.8rem; }
-  .about-hero-overlay p { font-size: 0.9rem; }
-  .order-btn { width: 100%; text-align: center; }
+  .about-hero {
+    height: 200px;
+  }
+
+  .about-hero-overlay h1 {
+    font-size: 1.8rem;
+  }
+
+  .about-hero-overlay p {
+    font-size: 0.9rem;
+  }
+
+  .order-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 
-
-/* GLOBAL MOBILE RESPONSIVENESS */
+/* ===========================
+   GLOBAL MOBILE RESPONSIVENESS
+   =========================== */
 @media (max-width: 768px) {
-  /* NAVBAR: stack links vertically */
-  .navbar {
+  /* NAVBAR: stack links vertically on mobile */
+  .navbar-inner {
     flex-direction: column;
     align-items: flex-start;
     padding: 15px;
@@ -527,7 +690,7 @@ html, body {
     font-size: 0.95rem;
   }
 
-  /* WhatsApp button expands full width */
+  /* WhatsApp button expands full width on mobile */
   .whatsapp-btn {
     width: 100%;
     text-align: center;
@@ -535,11 +698,11 @@ html, body {
     font-size: 1rem;
   }
 
-  /* HERO SECTIONS */
+  /* HERO SECTION: reduce height and font sizes */
   .hero-section,
   .about-hero {
-    min-height: 250px;
     height: auto;
+    min-height: 250px;
   }
 
   .hero-overlay h1,
@@ -552,7 +715,7 @@ html, body {
     font-size: 1rem;
   }
 
-  /* PRODUCTS GRID */
+  /* PRODUCTS GRID: single column layout */
   .products-grid {
     grid-template-columns: 1fr;
     gap: 20px;
@@ -562,7 +725,7 @@ html, body {
     height: 180px;
   }
 
-  /* ABOUT US PAGE */
+  /* ABOUT US PAGE: tighter text layout */
   .about-container {
     text-align: left;
     padding: 0 15px;
@@ -577,7 +740,7 @@ html, body {
     font-size: 1rem;
   }
 
-  /* FOOTER */
+  /* FOOTER: stack links vertically */
   .footer-inner {
     flex-direction: column;
     text-align: center;
@@ -593,18 +756,20 @@ html, body {
     font-size: 0.95rem;
   }
 
-  /* CART PAGE */
+  /* CART PAGE: stack items vertically */
   .cart-item {
     flex-direction: column;
     align-items: center;
   }
 
   .cart-summary {
-    max-width: 100%;
+    width: 90%;
   }
 }
 
-/* PRIVACY POLICY PAGE */
+/* ===========================
+   PRIVACY POLICY PAGE
+   =========================== */
 .privacy-policy {
   background: linear-gradient(135deg, #f9f9f9, #eef6ff);
   font-family: "Segoe UI", Arial, sans-serif;
@@ -614,7 +779,7 @@ html, body {
 
 .privacy-hero {
   background: #007bff;
-  color: #fff;
+  color: white;
   text-align: center;
   padding: 60px 20px;
 }
@@ -636,7 +801,7 @@ html, body {
 }
 
 .privacy-container section {
-  background: #fff;
+  background: white;
   padding: 25px;
   margin-bottom: 25px;
   border-radius: 8px;
@@ -660,7 +825,9 @@ html, body {
   padding-left: 20px;
 }
 
-/* FOOTER */
+/* ===========================
+   FOOTER
+   =========================== */
 .footer {
   background: #222;
   color: #ccc;
@@ -681,6 +848,7 @@ html, body {
 
 .footer-links a {
   color: #bbb;
+  margin: 0 10px;
   text-decoration: none;
   transition: color 0.3s ease;
 }
@@ -703,7 +871,9 @@ html, body {
   text-decoration: underline;
 }
 
-/* CART PAGE */
+/* ===========================
+   CART PAGE
+   =========================== */
 .cart-page {
   background: linear-gradient(135deg, #f0f4ff, #e6f7ff);
   font-family: "Segoe UI", Arial, sans-serif;
@@ -713,12 +883,20 @@ html, body {
   flex-direction: column;
 }
 
+<<<<<<< HEAD
 /* Hero banner */
+=======
+/* Hero banner for cart page */
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 .cart-hero {
   background: #007bff;
-  color: #fff;
+  color: white;
   text-align: center;
+<<<<<<< HEAD
   padding: 50px 20px;
+=======
+  padding: 50px 20px; /* unified padding */
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 }
 
 .cart-hero h1 {
@@ -731,7 +909,11 @@ html, body {
   font-weight: 300;
 }
 
+<<<<<<< HEAD
 /* Cart container */
+=======
+/* Cart container and items */
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 .cart-container {
   max-width: 900px;
   margin: 30px auto;
@@ -750,7 +932,8 @@ html, body {
   box-shadow: 0 3px 8px rgba(0,0,0,0.08);
 }
 
-.cart-item img {
+.cart-item img,
+.cart-image {
   width: 120px;
   height: 120px;
   object-fit: cover;
@@ -762,6 +945,7 @@ html, body {
   flex: 1;
 }
 
+<<<<<<< HEAD
 .cart-details h3 {
   margin: 0;
   font-size: 1.1rem;
@@ -772,6 +956,8 @@ html, body {
   margin: 0.3rem 0;
 }
 
+=======
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
 /* Quantity controls */
 .quantity-control {
   display: flex;
@@ -802,7 +988,7 @@ html, body {
 
 /* Remove item button */
 .remove-item {
-  background: #d9534f; /* darker red for contrast */
+  background: #ff4d4d;
   color: #fff;
   border: none;
   padding: 0.4rem 0.8rem;
@@ -812,158 +998,153 @@ html, body {
   transition: background 0.2s;
 }
 
+<<<<<<< HEAD
 .remove-item:hover {
-  background: #c9302c;
+  background: #e63b3b;
 }
 
-/* Responsive layout */
+/* Cart summary */
+=======
+/* Cart summary box */
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
+.cart-summary {
+  max-width: 400px;
+  margin: 40px auto;
+  background: #f9f9f9;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+<<<<<<< HEAD
+.cart-summary h2 {
+  margin-bottom: 1rem;
+}
+
+/* Checkout button */
+=======
+/* Checkout and WhatsApp buttons */
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
+.checkout-btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.checkout-btn:hover {
+  background: #0056d2;
+}
+
+/* WhatsApp button */
+.whatsapp-btn {
+  display: block;
+  margin-top: 15px;
+  background: #25d366;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+<<<<<<< HEAD
+/* For tablets and smaller screens */
 @media (max-width: 768px) {
   .cart-item {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    text-align: left;
   }
 
-  .cart-item img {
-    margin-right: 0;
-    margin-bottom: 1rem;
+  .cart-item img,
+  .cart-image {
+    width: 100%;
+    height: auto;
+    margin: 0 0 1rem 0;
+  }
+
+  .cart-details {
+    width: 100%;
+  }
+
+  .quantity-control {
+    justify-content: flex-start;
   }
 
   .cart-summary {
+    width: 90%;
+    margin: 20px auto;
+  }
+
+  .checkout-btn,
+  .whatsapp-btn {
+    font-size: 1rem;
+    padding: 14px;
+  }
+}
+
+/* For very small screens (phones) */
+@media (max-width: 480px) {
+  .cart-hero h1 {
+    font-size: 2rem;
+  }
+
+  .cart-hero p {
+    font-size: 1rem;
+  }
+
+  .cart-item {
+    padding: 12px;
+  }
+
+  .cart-details h3 {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 0.95rem;
+  }
+
+  .quantity-control input {
+    width: 40px;
+  }
+
+  .checkout-btn,
+  .whatsapp-btn {
     width: 100%;
+    padding: 12px;
+    font-size: 0.95rem;
   }
 }
 
 
-/* =========================
-   THEME VARIABLES & RESETS
-   ========================= */
-:root{
-  --color-primary: #007bff;
-  --color-primary-700: #0056d2;
-  --color-danger: #d9534f;
-  --color-danger-700: #c9302c;
-  --color-whatsapp: #25d366;
-  --color-whatsapp-700: #1ebe5d;
-  --color-bg: #ffffff;
-  --color-muted: #6c757d;
-  --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
-  --shadow-md: 0 2px 8px rgba(0,0,0,0.10);
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --container-max: 900px;
-  --gutter: 1.25rem;
-  --base-font: 16px;
-}
-
-/* Box sizing and base */
-*,
-*::before,
-*::after { box-sizing: border-box; }
-
-html {
-  font-size: var(--base-font);
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  color: #222;
-  background: linear-gradient(135deg,#f0f4ff,#e6f7ff);
-  -webkit-font-smoothing:antialiased;
-}
-
-/* Utility helpers */
-.container {
-  max-width: var(--container-max);
-  margin: 2.5rem auto;
-  padding: 0 1.25rem;
-}
-.text-center { text-align: center; }
-.mb-1 { margin-bottom: 0.625rem; }
-.mb-2 { margin-bottom: 1.25rem; }
-.hidden { display: none !important; }
-
-/* =========================
-   GENERIC BUTTON SYSTEM
-   ========================= */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: clamp(0.5rem, 2vw, 0.9rem);
-  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
-  border-radius: var(--radius-md);
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  color: #fff;
-  background: var(--color-primary);
-  transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.12s ease;
-  box-shadow: var(--shadow-sm);
-  line-height: 1;
-}
-
-/* Variants */
-.btn--primary { background: var(--color-primary); }
-.btn--primary:hover { background: var(--color-primary-700); }
-
-.btn--danger { background: var(--color-danger); }
-.btn--danger:hover { background: var(--color-danger-700); }
-
-.btn--whatsapp { background: var(--color-whatsapp); }
-.btn--whatsapp:hover { background: var(--color-whatsapp-700); }
-
-/* Size / layout helpers */
-.btn--block { width: 100%; display: inline-flex; }
-.btn--sm { padding: 0.35rem 0.6rem; font-size: 0.9rem; border-radius: var(--radius-sm); }
-
-/* Focus accessibility */
-.btn:focus,
-.btn:focus-visible {
-  outline: 3px solid rgba(0,123,255,0.18);
-  outline-offset: 3px;
-  box-shadow: 0 0 0 4px rgba(0,123,255,0.06);
-}
-
-/* Convenience classes for legacy markup */
-.checkout-btn { /* fallback if HTML uses .checkout-btn */
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 8px;
-  background: var(--color-primary);
-  color: #fff;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-}
-.checkout-btn:hover { background: var(--color-primary-700); }
-
-.whatsapp-btn { /* fallback if HTML uses .whatsapp-btn */
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  border-radius: 8px;
-  background: var(--color-whatsapp);
-  color: #fff;
-  font-weight: 700;
-  text-decoration: none;
-  text-align: center;
-}
-.whatsapp-btn:hover { background: var(--color-whatsapp-700); }
-
-/* =========================
-   HERO (used across pages)
-   ========================= */
+=======
+>>>>>>> cbad68f6507b04f4991c9e6a633aa927cb5d233d
+/* ===========================
+   HERO BASE (shared hero styles)
+   =========================== */
 .hero {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: center; /* vertical centering */
+  align-items: center;     /* horizontal centering */
   min-height: 100vh;
   padding: clamp(1rem, 4vw, 2rem);
   text-align: center;
@@ -985,37 +1166,106 @@ body {
 }
 
 /* =========================
-   CART LAYOUT
+   Design tokens / variables
    ========================= */
-.cart-page {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  color: #333;
-  background: linear-gradient(135deg,#f0f4ff,#e6f7ff);
+:root{
+  --color-primary: #007bff;
+  --color-primary-700: #0056d2;
+  --color-danger: #d9534f;
+  --color-danger-700: #c9302c;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-700: #1ebe5d;
+  --color-bg: #ffffff;
+  --color-muted: #6c757d;
+  --shadow-sm: 0 2px 6px rgba(0,0,0,0.08);
+  --shadow-md: 0 2px 8px rgba(0,0,0,0.1);
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --container-max: 900px;
+  --gutter: 1.25rem;
+  --base-font: 16px;
 }
 
-/* Cart hero (page header) */
-.cart-hero {
-  background: var(--color-primary);
+/* Base resets */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html { font-size: var(--base-font); -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: #222; background: linear-gradient(135deg,#f0f4ff,#e6f7ff); }
+
+/* =========================
+   Unified button system
+   ========================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: clamp(0.5rem, 2vw, 0.9rem);
+  font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
   color: #fff;
-  text-align: center;
-  padding: 3.125rem 1.25rem; /* 50px 20px equivalent */
+  background: var(--color-primary);
+  transition: background 0.18s ease, transform 0.12s ease, box-shadow 0.12s ease;
+  box-shadow: var(--shadow-sm);
+  line-height: 1;
 }
-.cart-hero h1 { font-size: 2.5rem; margin: 0 0 0.5rem; }
-.cart-hero p { font-size: 1.15rem; font-weight: 300; margin: 0; }
 
-/* Cart container */
-.cart-container {
+/* Button variants */
+.btn--primary { background: var(--color-primary); }
+.btn--primary:hover { background: var(--color-primary-700); }
+
+.btn--danger { background: var(--color-danger); }
+.btn--danger:hover { background: var(--color-danger-700); }
+
+.btn--whatsapp { background: var(--color-whatsapp); color: #fff; }
+.btn--whatsapp:hover { background: var(--color-whatsapp-700); }
+
+/* Full width helper */
+.btn--block { width: 100%; }
+
+/* Focus styles for accessibility */
+.btn:focus,
+.btn:focus-visible {
+  outline: 3px solid rgba(0,123,255,0.18);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(0,123,255,0.06);
+}
+
+/* Small button (icon / inline) */
+.btn--sm { padding: 0.35rem 0.6rem; font-size: 0.9rem; border-radius: var(--radius-sm); }
+
+/* =========================
+   Hero button (uses unified system)
+   ========================= */
+.hero-button {
+  /* Use the .btn base for consistent styling; keep a max width for layout */
+  display: inline-block;
+  width: 100%;
+  max-width: 17.5rem; /* 280px */
+  text-align: center;
+  border-radius: var(--radius-md);
+  padding: clamp(0.75rem, 3vw, 1rem);
+  font-size: clamp(0.9rem, 3vw, 1.1rem);
+}
+
+/* =========================
+   Containers and layout
+   ========================= */
+.container {
   max-width: var(--container-max);
   margin: 2.5rem auto;
   padding: 0 1.25rem;
 }
 
-/* Cart item */
+/* Cart layout */
+.cart-container { max-width: var(--container-max); margin: 2.5rem auto; padding: 0 1.25rem; }
 .cart-item {
   display: flex;
-  gap: var(--gutter);
+  gap: 1.25rem;
   background: var(--color-bg);
   border-radius: 10px;
   box-shadow: var(--shadow-md);
@@ -1030,10 +1280,7 @@ body {
   border-radius: 8px;
   flex-shrink: 0;
 }
-.cart-details {
-  flex: 1;
-  min-width: 0;
-}
+.cart-details { flex: 1; min-width: 0; }
 .cart-details h3 { margin: 0 0 0.5rem; font-size: 1.05rem; }
 .cart-details .price { color: var(--color-primary); font-weight: 700; margin-bottom: 0.6rem; display:block; }
 
@@ -1062,7 +1309,7 @@ body {
   font-size: 0.95rem;
 }
 
-/* Remove item */
+/* Remove item (button variant) */
 .remove-item {
   display: inline-flex;
   align-items: center;
@@ -1081,9 +1328,7 @@ body {
 .remove-item:focus,
 .remove-item:focus-visible { outline: 3px solid rgba(217,83,79,0.18); outline-offset: 3px; }
 
-/* =========================
-   CART SUMMARY
-   ========================= */
+/* Cart summary */
 .cart-summary {
   max-width: 25rem; /* 400px */
   margin: 2.5rem auto;
@@ -1096,14 +1341,17 @@ body {
 .cart-summary h2 { color: var(--color-primary); margin-bottom: 1rem; font-size: 1.25rem; }
 .cart-summary p { font-size: 1.05rem; margin: 0.5rem 0; color: var(--color-muted); }
 
-/* Use the generic .btn system in HTML:
-   <button class="btn btn--primary btn--block">Checkout</button>
-   <a class="btn btn--whatsapp btn--block" href="...">Order via WhatsApp</a>
-   The fallback .checkout-btn / .whatsapp-btn classes above will also work if used. */
+/* Checkout and whatsapp buttons use unified classes */
+.checkout-btn { composes: btn btn--primary btn--block; }
+.whatsapp-btn { composes: btn btn--whatsapp btn--block; }
 
-/* =========================
-   SERVICES / OTHER PAGES
-   ========================= */
+/* Fallback for browsers that don't support composes */
+.checkout-btn { display:block; width:100%; padding:0.75rem; border-radius:8px; background:var(--color-primary); color:#fff; font-weight:700; border:none; cursor:pointer; }
+.checkout-btn:hover { background:var(--color-primary-700); }
+.whatsapp-btn { display:block; width:100%; padding:0.75rem; border-radius:8px; background:var(--color-whatsapp); color:#fff; font-weight:700; text-decoration:none; text-align:center; }
+.whatsapp-btn:hover { background:var(--color-whatsapp-700); }
+
+/* Services page */
 .services-page { min-height: 100vh; display:flex; flex-direction:column; color:#333; }
 .services-hero { background: var(--color-primary); color:#fff; text-align:center; padding:3.125rem 1.25rem; }
 .services-container { max-width: var(--container-max); margin: 2.5rem auto; padding: 0 1.25rem; }
@@ -1115,65 +1363,37 @@ body {
 
 /* Scroll to top */
 .scroll-to-top {
-  position: fixed;
-  bottom: 1.875rem;
-  right: 1.875rem;
-  background-color: var(--color-whatsapp);
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  padding: 0.75rem;
-  cursor: pointer;
-  font-size: 1.25rem;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-  transition: background 0.18s ease;
-  z-index: 1000;
+  position: fixed; bottom: 1.875rem; right: 1.875rem;
+  background-color: var(--color-whatsapp); color: #fff; border: none;
+  border-radius: 50%; padding: 0.75rem; cursor: pointer; font-size: 1.25rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: background 0.18s ease; z-index:1000;
 }
 .scroll-to-top:hover { background-color: #128C7E; }
-.scroll-to-top:focus,
-.scroll-to-top:focus-visible { outline: 3px solid rgba(37,211,102,0.18); outline-offset: 3px; }
+.scroll-to-top:focus, .scroll-to-top:focus-visible { outline: 3px solid rgba(37,211,102,0.18); outline-offset: 3px; }
 
 /* =========================
-   RESPONSIVE RULES
+   Responsive rules
    ========================= */
 @media (max-width: 768px) {
-  .cart-item {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: clamp(0.75rem, 2vw, 1.25rem);
-    padding: clamp(0.5rem, 2vw, 1rem);
-  }
-  .cart-item img {
-    width: 100%;
-    height: auto;
-    border-radius: clamp(4px, 1vw, 8px);
-    object-fit: cover;
-  }
-  .cart-summary {
-    width: 100%;
-    margin-top: clamp(0.75rem, 2vw, 1.25rem);
-    padding: clamp(0.75rem, 2.5vw, 1.25rem);
-    background-color: #f9f9f9;
-    border-radius: clamp(6px, 1vw, 10px);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-  .cart-summary h2 { font-size: clamp(1rem, 2.5vw, 1.4rem); line-height: 1.4; }
-  .cart-summary p { font-size: clamp(0.9rem, 2vw, 1rem); line-height: 1.4; }
-  .cart-summary .btn,
-  .checkout-btn,
-  .whatsapp-btn { width: 100%; padding: clamp(0.65rem, 2vw, 0.85rem); font-size: clamp(0.95rem, 2.2vw, 1.05rem); border-radius: clamp(5px, 1vw, 8px); margin-top: clamp(0.5rem, 2vw, 1rem); }
+  .cart-item { flex-direction: column; align-items: flex-start; gap: clamp(0.75rem, 2vw, 1.25rem); padding: clamp(0.5rem, 2vw, 1rem); }
+  .cart-item img { width: 100%; height: auto; border-radius: clamp(4px, 1vw, 8px); object-fit: cover; }
+  .cart-summary { width: 100%; margin-top: clamp(0.75rem, 2vw, 1.25rem); padding: clamp(0.75rem, 2.5vw, 1.25rem); background-color: #f9f9f9; border-radius: clamp(6px, 1vw, 10px); box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+  .cart-summary h2 { font-size: clamp(1rem, 2.5vw, 1.4rem); line-height:1.4; }
+  .cart-summary p { font-size: clamp(0.9rem, 2vw, 1rem); line-height:1.4; }
+  .cart-summary .btn { width:100%; padding: clamp(0.65rem, 2vw, 0.85rem); font-size: clamp(0.95rem, 2.2vw, 1.05rem); border-radius: clamp(5px, 1vw, 8px); margin-top: clamp(0.5rem, 2vw, 1rem); }
 }
 
 @media (max-width: 480px) {
   .cart-item { align-items: center; gap: clamp(0.5rem, 3vw, 0.75rem); padding: clamp(0.5rem, 3vw, 0.75rem); }
   .cart-item img { max-height: 12.5rem; object-fit: contain; }
   .cart-summary { padding: clamp(0.5rem, 3vw, 0.75rem); border-radius: clamp(5px, 1vw, 7px); }
-  .cart-summary h2 { font-size: clamp(1rem, 4vw, 1.2rem); text-align: center; }
-  .cart-summary p { font-size: clamp(0.85rem, 3.5vw, 0.95rem); line-height: 1.3; text-align: center; }
-  .cart-summary .btn,
-  .checkout-btn,
-  .whatsapp-btn { padding: clamp(0.6rem, 3vw, 0.75rem); font-size: clamp(0.9rem, 3.5vw, 1rem); margin-top: clamp(0.5rem, 3vw, 0.75rem); border-radius: clamp(4px, 1vw, 6px); }
+  .cart-summary h2 { font-size: clamp(1rem, 4vw, 1.2rem); text-align:center; }
+  .cart-summary p { font-size: clamp(0.85rem, 3.5vw, 0.95rem); line-height:1.3; text-align:center; }
+  .cart-summary .btn { padding: clamp(0.6rem, 3vw, 0.75rem); font-size: clamp(0.9rem, 3.5vw, 1rem); margin-top: clamp(0.5rem, 3vw, 0.75rem); border-radius: clamp(4px, 1vw, 6px); }
 }
 
-/* End of file */
-
+/* Utility helpers */
+.text-center { text-align:center; }
+.mb-1 { margin-bottom: 0.625rem; }
+.mb-2 { margin-bottom: 1.25rem; }
+.hidden { display:none !important; }

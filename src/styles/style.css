@@ -1178,7 +1178,7 @@ body {
 .scroll-to-top {
   position: fixed;
   bottom: 5vh;   /* use viewport units so it sits above phone nav bar */
-  right: 5vw;    /* keep it away from screen edge */
+  /*right: 5vw;    /* keep it away from screen edge */
   background-color: #25d366;
   color: #fff;
   border: none;
@@ -1189,6 +1189,10 @@ body {
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   transition: background 0.2s ease, transform 0.2s ease;
   z-index: 9999; /* force it above navbars/footers */
+  position: fixed;
+  bottom: 20px;
+  right: 80px;   /* moved left to avoid chatbox */
+ 
 }
 
 /* Hover effect (desktop only) */
@@ -1216,6 +1220,78 @@ body {
     font-size: 0.9rem;
   }
 }
+
+/* Chatbox */
+
+.chatbox {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 300px;
+  background: #fff;
+  border: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  /*z-index: 9999; /* keep above other elements */
+  /*position: fixed; */
+  z-index: 5000; /* lower than scroll button */
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+.message.user {
+  text-align: right;
+  color: #007bff;
+}
+
+.message.bot {
+  text-align: left;
+  color: #333;
+}
+
+.chat-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+.chat-input button {
+  padding: 8px 12px;
+  background: #25d366;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .chatbox {
+    max-width: 100%;
+    height: 250px;
+    font-size: 0.9rem;
+  }
+  .chat-input input {
+    font-size: 0.9rem;
+  }
+  .chat-input button {
+    font-size: 0.9rem;
+    padding: 6px 10px;
+  }
+}
+
 
 /* End of file */
 

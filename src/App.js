@@ -10,7 +10,7 @@ import Services from "./pages/Services";
 import { CartProvider } from "./context/CartContext";
 import Cart from "./pages/Cart";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
-import ChatBox from "./components/ChatBox"; // ✅ import
+
 
 import "./styles/style.css";
 
@@ -31,8 +31,7 @@ function App() {
             <Route path="/services" element={<Services />} />
           </Routes>
 
-          {/* Chatbox always visible */}
-          <ChatBox />
+          
 
           <Footer />
         </div>
